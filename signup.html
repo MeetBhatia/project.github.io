@@ -15,13 +15,24 @@
             
         }
       
-        body{       
-            background-image: url("images/signup.jpg");
-            background-size: cover;
-             
-            
-            
-        }
+        body, html {
+  height: 100%;
+  padding: 0%;
+  margin: 0%;
+}
+
+#bg {
+  /* The image used */
+  background-image: url("images/signup.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
         #si{
             text-align: center;
            color:white;
@@ -37,7 +48,7 @@
     <link rel="stylesheet" href="bootstrap.css">
 </head>
 <body>
-    
+    <div id="bg">
     <h1 id="si">SignUp</h1>
 
     <div id="box">
@@ -48,8 +59,10 @@
          <input type="password" placeholder="Password" id="pwd"><br><br>
          <button onclick="save()" id="button" class="btn btn-success">SignUp</button>
          
+         
 
     </div>
+</div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
           <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
         
@@ -97,14 +110,19 @@ function save(){
     firebase.database().ref('/Record/'+mail).set(obj)
     alert("SignUp Successfull")
     clear()
+    
 }
+
+
 
 function clear(){
     document.getElementById("name").value=""
     document.getElementById("phone").value=""
     document.getElementById("mail").value=""
     document.getElementById("pwd").value=""
+    
 }
+
 
     </script>
 </body>

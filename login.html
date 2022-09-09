@@ -14,10 +14,24 @@
             text-align: center;
             
         }
-        body{       
-            background-image: url("images/login.jpg") ;
-            background-size: cover;
-        }
+        body, html {
+  height: 100%;
+  padding: 0%;
+  margin: 0%;
+}
+
+#bg {
+  /* The image used */
+  background-image: url("images/login.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
         #log{
             text-align: center;
             color: white ;
@@ -32,7 +46,7 @@
 <link rel="stylesheet" href="bootstrap.css">
 </head>
 <body>
-    
+  <div id="bg">  
 <h1 id="log">LogIn</h1>
  <div id="box">
     <input type="text" placeholder="E-mail"><br><br>
@@ -43,7 +57,7 @@
 
  </div>
 
-
+</div>
 
 
 

@@ -5,24 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #nav{
-            
-            font-weight: bold;
-            
-        
-        }
-        body{
-            background-image: url("images/home.jpg");
-            background-size: cover;
-        }
+        body, html {
+  height: 100%;
+  padding: 0%;
+}
+
+#bg {
+  /* The image used */
+  background-image: url("images/home.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
     </style>
 
 <link rel="stylesheet" href="bootstrap.css">
 </head>
-<body>
-    <div class="navbar navbar-inverse" id="nav" >
+<body >
+    <div id="bg" >
+    <div class="navbar navbar-inverse"  id="nav"  >
         <div class="container">
-        <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav" id="nav">
             <li> <a href="#"> Home</a></li>
             <li> <a href="#"> About</a></li>
             <li> <a href="#"> Services</a></li>
@@ -36,7 +45,9 @@
             <li> <a href="login.html"> Login </a></li>
             <li> <a href="signup.html">SignUp</a></li>
         </ul>
+    
     </div>
     </div>
+</div>
 </body>
 </html>
