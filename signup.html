@@ -37,6 +37,7 @@
             text-align: center;
            color:white;
            font-weight: bold;
+           margin: 0%;
            
         }
       #button{
@@ -107,7 +108,7 @@ function save(){
 
     }
 
-    firebase.database().ref('/Record/'+mail).set(obj)
+    firebase.database().ref('/Record/'+name).set(obj)
     alert("SignUp Successfull")
     clear()
     
