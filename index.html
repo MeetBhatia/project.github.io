@@ -27,7 +27,7 @@ background-size: cover;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: white;
+  background-color: rgb(0, 0, 0);
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
@@ -43,7 +43,7 @@ background-size: cover;
 }
 
 .sidenav a:hover {
-  color:black;
+  color:rgb(255, 255, 255);
 }
 
 .sidenav .closebtn {
@@ -63,8 +63,21 @@ background-size: cover;
   color: white;
   font-weight: bolder;
   margin-left: 10px;
-}
+  
+  }
 
+#lin{
+  background-color: black;
+  height: 50px;
+  
+}
+#n{
+  color: white;
+  margin-left: 40%;
+  font-size: 40px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bolder;
+}
 </style>
 </head>
 <body>
@@ -79,8 +92,10 @@ background-size: cover;
   <a href="login.html">LogIn</a>
   <a href="signup.html">SignUp</a>
 </div>
-
+<div id="lin">
 <span id="line" style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+<span id="n">Meet Bhatia</span>
+</div>
 </div>
 <script>
 function openNav() {
