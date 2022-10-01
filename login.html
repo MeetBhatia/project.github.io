@@ -99,10 +99,11 @@
   
   }
 
-#lin{
-  background-color: black;
-  height: 40px;
-  
+
+#not{
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size:medium;
 }
 
 </style>
@@ -172,20 +173,18 @@
       style="width:40px;height:40px">
   </lord-icon>
   LogIn</a>
-    <a href="signup.html">
+    <a href="Admin.html">
       <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
   <lord-icon
       src="https://cdn.lordicon.com/dklbhvrt.json"
       trigger="hover"
       colors="primary:#1111"
       style="width:40px;height:40px">
-  </lord-icon>SignUp</a>
+  </lord-icon>Admin</a>
   </div>
   </div>
   
-  <div id="lin">
-  <span id="line" style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776;</span>
-</div>
+ 
   <script>
   function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
@@ -196,17 +195,88 @@
   }
   </script>
   <div id="bg">  
+    <span id="line" style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776;</span>
 <h1 id="log">LogIn</h1>
  <div id="box">
     <input id="i" type="text" placeholder="E-mail"  ><br><br>
     <input id="ii" type="password" placeholder="Password" ><br><br>
-    <button id="button" class="btn btn-success">LogIn</button>
+    <span id="not"> Does Not Have An Account ? <a href="signup.html" style="color: rgb(34, 252, 5);">SignUp</a></span><br><br>
+    <button id="button" class="btn btn-success" onclick="get()">LogIn</button>
+   
 
 
 
  </div>
 
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+        
+            <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+            <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script>
+            
+            <!-- Add Firebase products that you want to use -->
+            <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-storage.js"></script> 
+
+<script>
+  const firebaseConfig = {
+        apiKey: "AIzaSyCJKasiiQK7qtKXsk1Bpk2CZJ5gV2-toR4",
+  authDomain: "project-f2ba7.firebaseapp.com",
+  databaseURL: "https://project-f2ba7-default-rtdb.firebaseio.com",
+  projectId: "project-f2ba7",
+  storageBucket: "project-f2ba7.appspot.com",
+  messagingSenderId: "1040782321754",
+  appId: "1:1040782321754:web:9d1ee85fe29b4f21fd9063"
+        };
+
+        // firebase.initializeApp(firebaseConfig);
+
+// Initialize Firebase
+   firebase.initializeApp(firebaseConfig);
+
+
+  function get(){
+
+firebase.database().ref("Record").once("value",function(AllRecord){
+        AllRecord.forEach(function(i){
+           match(i.val().Email,i.val().Password)
+        })  
+  })
+
+
+
+
+}
+
+function match(email,password){
+ mail= document.getElementById("i").value
+ pwd= document.getElementById("ii").value
+
+if(mail==email){
+
+if (pwd==password)
+alert("LogIn Successfull")  
+
+
+else{
+  alert("Please enter correct Password")
+}
+  
+}
+
+else{
+  alert("Please enter correct E-mail")
+}
+
+
+
+}
+
+</script>
 
 </body>
 </html>

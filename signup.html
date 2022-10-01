@@ -102,12 +102,12 @@
   
   }
 
-#lin{
-  background-color: black;
-  height: 40px;
-  
-}
 
+#have{
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size:medium;
+}
     
         
     
@@ -176,20 +176,18 @@
       style="width:40px;height:40px">
   </lord-icon>
   LogIn</a>
-    <a href="signup.html">
+    <a href="Admin.html">
       <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
   <lord-icon
       src="https://cdn.lordicon.com/dklbhvrt.json"
       trigger="hover"
       colors="primary:#1111"
       style="width:40px;height:40px">
-  </lord-icon>SignUp</a>
+  </lord-icon>Admin</a>
   </div>
   </div>
   
-  <div id="lin">
-  <span id="line" style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776;</span>
-</div>
+  
   <script>
   function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
@@ -201,6 +199,7 @@
   </script>
   
     <div id="bg">
+      <span id="line" style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776;</span>
     <h1 id="si">SignUp</h1>
 
     <div id="box">
@@ -209,7 +208,9 @@
          <input type="text" placeholder="Phone No." id="phone"><br><br>
          <input type="email" placeholder="E-mail" id="mail"><br><br>
          <input type="password" placeholder="Password" id="pwd"><br><br>
+         <span id="have">Already Have An Account ? <a href="login.html" style="color: rgb(34, 252, 5);">Login</a></span><br><br>
          <button onclick="save()" id="button" class="btn btn-success">SignUp</button>
+        
          
          
 

@@ -1,0 +1,252 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <style>
+        body,html{
+  font-family: "Lato", sans-serif;
+  padding: 0%;
+  height: 100%;
+  margin: 0%;
+}
+#bg{
+    background-image: url("images/Admin.jpg");
+     /* Full height */
+  height: 100%;
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color:rgb(0, 0, 0);
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+#line{
+  color: rgb(0, 0, 0);
+  font-weight: bolder;
+  margin-left: 10px;
+  
+  }
+  
+    </style>
+</head>
+<body>
+    <div id="bg"> 
+        <div id="mySidenav" class="sidenav"> 
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="index.html" >
+            
+            <lord-icon
+            
+            src="https://cdn.lordicon.com/igpbsrza.json"
+            trigger="morph"
+            colors="primary:#1111"
+            state="morph-2"
+            style="width:40px;height:40px">
+           
+           
+            
+        </lord-icon>
+        
+        
+        
+        
+        Home<script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+        
+             </a>
+          
+        
+          <a href="#">
+            <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+        <lord-icon
+            src="https://cdn.lordicon.com/oclwxpmm.json"
+            trigger="hover"
+            colors="primary:#1111"
+            style="width:40px;height:40px">
+        </lord-icon>
+        Services</a>
+          <a href="#">
+            <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+        <lord-icon
+            src="https://cdn.lordicon.com/iicmtpsq.json"
+            trigger="hover"
+            colors="primary:#1111"
+            style="width:40px;height:40px">
+        </lord-icon>
+        About</a>
+          <a href="#">
+            <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+        <lord-icon
+            src="https://cdn.lordicon.com/cnyeuzxc.json"
+            trigger="hover"
+            colors="primary:#1111"
+            style="width:40px;height:40px">
+        </lord-icon>
+        Contact</a>
+          <a href="login.html">
+            <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+        <lord-icon
+            src="https://cdn.lordicon.com/hjeefwhm.json"
+            trigger="hover"
+            colors="primary:#1111"
+            style="width:40px;height:40px">
+        </lord-icon>
+        LogIn</a>
+          <a href="Admin.html">
+            <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+        <lord-icon
+            src="https://cdn.lordicon.com/dklbhvrt.json"
+            trigger="hover"
+            colors="primary:#1111"
+            style="width:40px;height:40px">
+        </lord-icon>Admin</a>
+        </div>
+        <span id="line" style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776;</span><br><br><br><br><br>
+        
+        
+    
+
+   <button onclick="show()" id="show" class="btn btn-success">Show</button> <br><br><br><br><br>
+
+<table class="table table-bordered">
+    <thead>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>E-Mail</th>
+        <th>Password</th>
+        
+        <tbody id="bdy"></tbody>
+    </thead>
+</table>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+        
+            <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+            <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script>
+            
+            <!-- Add Firebase products that you want to use -->
+            <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-storage.js"></script> 
+
+
+<script>
+    function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+const firebaseConfig = {
+        apiKey: "AIzaSyCJKasiiQK7qtKXsk1Bpk2CZJ5gV2-toR4",
+  authDomain: "project-f2ba7.firebaseapp.com",
+  databaseURL: "https://project-f2ba7-default-rtdb.firebaseio.com",
+  projectId: "project-f2ba7",
+  storageBucket: "project-f2ba7.appspot.com",
+  messagingSenderId: "1040782321754",
+  appId: "1:1040782321754:web:9d1ee85fe29b4f21fd9063"
+        };
+
+        // firebase.initializeApp(firebaseConfig);
+
+// Initialize Firebase
+   firebase.initializeApp(firebaseConfig);
+
+   function show(){
+    document.getElementById("bdy").innerHTML="" 
+    firebase.database().ref("Record").once("value",function(AllRecord){
+            AllRecord.forEach(function(i){
+               addItemOnTable(i.val().Name,i.val().Phone,i.val().Email,i.val().Password)
+            })  
+      })
+
+
+   }
+
+
+   function addItemOnTable(name,phone,email,password){
+
+    row = document.createElement("tr")
+
+cell1 = document.createElement("td")
+cell2 = document.createElement("td")
+cell3 = document.createElement("td")
+cell4 = document.createElement("td")
+
+
+
+
+
+
+
+
+
+
+
+
+cell1.innerHTML = name
+cell2.innerHTML = phone
+cell3.innerHTML = email
+cell4.innerHTML = password
+
+ 
+
+    row.appendChild(cell1)
+    row.appendChild(cell2)
+    row.appendChild(cell3)
+    row.appendChild(cell4)
+  
+document.getElementById("bdy").appendChild(row)
+}
+
+   
+</script>
+
+
+</body>
+</html>
