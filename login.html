@@ -241,40 +241,35 @@
 
   function get(){
 
+    mail= document.getElementById("i").value
+ pwd= document.getElementById("ii").value
+ const count=0
+
 firebase.database().ref("Record").once("value",function(AllRecord){
         AllRecord.forEach(function(i){
-           match(i.val().Email,i.val().Password)
-        })  
+            if(mail==i.val().Email && pwd==i.val().Password){
+              
+              alert("Login Successfull.....😀😀")
+              window.location.href="index.html"
+              count=1
+            }
+            
+          })  
+
+          if(count==0){
+            alert("Please Enter Correct E-mail and Password.....😓😓")
+
+          }
+          
+         
+          
+        
   })
 
-
-
-
-}
-
-function match(email,password){
- mail= document.getElementById("i").value
- pwd= document.getElementById("ii").value
-
-if(mail==email){
-
-if (pwd==password)
-alert("LogIn Successfull")  
-
-
-else{
-  alert("Please enter correct Password")
-}
   
 }
 
-else{
-  alert("Please enter correct E-mail")
-}
 
-
-
-}
 
 </script>
 
