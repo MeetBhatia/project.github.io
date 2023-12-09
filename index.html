@@ -55,7 +55,7 @@ background-size: cover;
   margin-left: 50px;
 }
 
-@media screen and (max-height: 450px) {
+@media only screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
@@ -67,21 +67,41 @@ background-size: cover;
   
   }
   
-h1{
+#big{
   color: white;
   text-align: center;
   padding-bottom: 10%;
+
 }
 
 .block{
   width: 20%;
-  height: 40%;
+  height: 30%;
   background-color: white;
   border-radius: 20%;
   display: inline-block;
   margin-left: 10%;
-  padding: 5px;
+  
  
+}
+
+@media only screen and (max-width: 400px){
+  .block {height: 10%;}  
+  #big{font-size: 25px ;}
+  
+}
+
+@media only screen and (min-width: 400px) {
+  .block {height: 15%;}
+  
+}
+
+@media only screen and (min-width: 760px){
+  .block {height: 20%;}
+}
+
+@media only screen and (min-width: 1024px){
+  .block {height: 30%;}
 }
 
 
